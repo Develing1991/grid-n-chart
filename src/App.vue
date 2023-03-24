@@ -1,13 +1,14 @@
 <template>
-  <div>{{ data }}</div>
+  <div>{{ fetchData }}</div>
   <div>
-    <button @click="aaa">button</button>
+    <ChartView :fetchData="fetchData" />
   </div>
 </template>
 
 <script setup>
 import { inject, ref, onMounted } from "vue";
-const data = ref({});
+import ChartView from "./components/ChartView.vue";
+const fetchData = ref([]);
 const socket = inject("socket");
 
 onMounted(() => {
@@ -17,7 +18,8 @@ onMounted(() => {
   });
 }),
   socket.on("send", (data) => {
-    console.log(data);
+    // console.log(data);
+    fetchData.value = data;
   });
 </script>
 
