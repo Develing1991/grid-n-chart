@@ -23,4 +23,9 @@ onMounted(() => {
   });
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+canvas {
+  max-width: 50vw;
+  max-height: 50vh;
+}
+</style>

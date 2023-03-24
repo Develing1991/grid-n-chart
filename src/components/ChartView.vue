@@ -1,5 +1,5 @@
 <template>
-  <Line :data="chartData" :options="options" />
+  <Line :data="data" :options="options" />
 </template>
 
 <script setup>
@@ -24,9 +24,10 @@ const props = defineProps({
 });
 const data = ref(chartConfig.data);
 const options = ref(chartConfig.options);
-const chartData = computed(() => {
-  return data.value;
-});
+// const chartData = computed(() => {
+
+//   return data.value;
+// });
 watch(
   () => props.fetchData,
   (newValue) => {
