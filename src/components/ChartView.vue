@@ -40,7 +40,7 @@ watch(
         },
       ],
     };
-    console.log(newValue);
+    // console.log(newValue);
   }
 );
 ChartJS.register(

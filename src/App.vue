@@ -2,12 +2,14 @@
   <div>{{ fetchData }}</div>
   <div>
     <ChartView :fetchData="fetchData" />
+    <GridStack :fetchData="fetchData"></GridStack>
   </div>
 </template>
 
 <script setup>
 import { inject, ref, onMounted } from "vue";
 import ChartView from "./components/ChartView.vue";
+import GridStack from "./components/grid/GridStack.vue";
 const fetchData = ref([]);
 const socket = inject("socket");
 
